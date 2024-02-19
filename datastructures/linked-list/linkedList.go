@@ -28,3 +28,7 @@ func (this *LinkedList[T]) Append(data T) {
 	// Set newNode as next node on the last node
 	lastNode.Next = newNode
 }
+
+func (this *LinkedList[T]) Remove(data T) {
+
+}

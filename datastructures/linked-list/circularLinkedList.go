@@ -1,29 +1,29 @@
 package main
 
 type CircularSingleList[T any] struct {
-	Head *Node[T]
+	head *Node[T]
 }
 
 func (this *CircularSingleList[T]) Append(data T) {
 	newNode := &Node[T]{Data: data, Next: nil}
 
 	// If no head is found, its the first node.
-	if this.Head != nil {
-		this.Head = newNode
+	if this.head != nil {
+		this.head = newNode
 		newNode.Next = newNode
 		return
 	}
 
-	lastNode := this.Head
+	lastNode := this.head
 
 	// Loop through nodes until node linking to the head is found.
-	for lastNode.Next != this.Head {
+	for lastNode.Next != this.head {
 		lastNode = lastNode.Next
 	}
 
 	// Insert newNode at the end, and link last node to head.
 	lastNode.Next = newNode
-	newNode = this.Head
+	newNode = this.head
 }
 
 type CircularDoubleList[T any] struct {
